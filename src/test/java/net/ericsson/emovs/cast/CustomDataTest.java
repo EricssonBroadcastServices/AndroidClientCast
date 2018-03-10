@@ -60,8 +60,8 @@ public class CustomDataTest {
         castProps.audioLanguage = "pt";
         castProps.autoplay = false;
         castProps.maxBitrate = 10L;
-        castProps.startTime = 2;
-        castProps.textLanguage = "sv";
+        castProps.startTime = 2L;
+        castProps.subtitleLanguage = "sv";
         castProps.timeshiftEnabled = false;
         castProps.useLastViewedOffset = true;
 
