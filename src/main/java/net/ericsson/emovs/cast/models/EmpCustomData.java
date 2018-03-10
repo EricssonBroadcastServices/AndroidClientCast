@@ -30,11 +30,15 @@ public class EmpCustomData {
     public boolean timeshiftEnabled;
 
     public String audioLanguage;
-    public String textLanguage;
-    public long startTime;
+    public String subtitleLanguage;
     public Long absoluteStartTime;
     public Long maxBitrate;
     public boolean autoplay;
+    public JSONObject textTrackStyle;
+    public boolean textTrackSettings;
+    public Long startTime;
+    public Long startOffset;
+    public String playFrom;
 
     // These properties are for android internal use - no need to send them to receiver
     public String locale;
@@ -48,7 +52,8 @@ public class EmpCustomData {
         this.locale = EMPRegistry.locale();
         this.imageOrientation = EmpImage.Orientation.LANDSCAPE;
         this.autoplay = true;
-        this.startTime = 0;
+        this.textTrackSettings = true;
+        this.playFrom = "defaultBehaviour";
     }
 
     public void setProgramId(String programId) {
@@ -73,15 +78,27 @@ public class EmpCustomData {
             customData.put("ericssonexposure", exposureSettings.toJson());
             customData.put("timeShiftDisabled", !timeshiftEnabled);
             customData.put("useLastViewedOffset", useLastViewedOffset);
-            customData.put("startTime", startTime);
             customData.put("autoplay", autoplay);
+            customData.put("textTrackSettings", textTrackSettings);
+
+            if (playFrom != null) {
+                customData.put("playFrom", playFrom);
+            }
+
+            if (startTime != null) {
+                customData.put("startTime", startTime);
+            }
+
+            if (startOffset != null) {
+                customData.put("startOffset", startOffset);
+            }
 
             if (audioLanguage != null) {
                 customData.put("audioLanguage", audioLanguage);
             }
 
-            if (textLanguage != null) {
-                customData.put("textLanguage", textLanguage);
+            if (subtitleLanguage != null) {
+                customData.put("subtitleLanguage", subtitleLanguage);
             }
 
             if (absoluteStartTime != null) {
@@ -90,6 +107,10 @@ public class EmpCustomData {
 
             if (maxBitrate != null) {
                 customData.put("maxBitrate", maxBitrate);
+            }
+
+            if (textTrackStyle != null) {
+                customData.put("textTrackStyle", textTrackStyle);
             }
         }
         catch (JSONException e) {
