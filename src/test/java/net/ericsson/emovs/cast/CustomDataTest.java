@@ -69,7 +69,7 @@ public class CustomDataTest {
         assertEquals("channel1", propsJson.optString("assetId"));
         assertEquals("program1", propsJson.optString("programId"));
         assertEquals("pt", propsJson.optString("audioLanguage"));
-        assertEquals("sv", propsJson.optString("textLanguage"));
+        assertEquals("sv", propsJson.optString("subtitleLanguage"));
         assertEquals(true, propsJson.optBoolean("timeShiftDisabled"));
         assertEquals(false, propsJson.optBoolean("autoplay"));
         assertEquals(true, propsJson.optBoolean("useLastViewedOffset"));
