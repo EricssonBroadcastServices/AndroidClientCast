@@ -81,17 +81,21 @@ public class EmpCustomData {
             customData.put("autoplay", autoplay);
             customData.put("textTrackSettings", textTrackSettings);
 
+            JSONObject playbackProps = new JSONObject();
+
             if (playFrom != null) {
-                customData.put("playFrom", playFrom);
+                playbackProps.put("playFrom", playFrom);
             }
 
             if (startTime != null) {
-                customData.put("startTime", startTime);
+                playbackProps.put("startTime", startTime);
             }
 
             if (startOffset != null) {
-                customData.put("startOffset", startOffset);
+                playbackProps.put("startOffset", startOffset);
             }
+
+            customData.put("playbackProperties", playbackProps);
 
             if (audioLanguage != null) {
                 customData.put("audioLanguage", audioLanguage);
