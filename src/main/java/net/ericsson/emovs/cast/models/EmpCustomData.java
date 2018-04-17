@@ -95,7 +95,9 @@ public class EmpCustomData {
                 playbackProps.put("startOffset", startOffset);
             }
 
-            customData.put("playbackProperties", playbackProps);
+            if (playbackProps.length() > 0) {
+                customData.put("playbackProperties", playbackProps);
+            }
 
             if (audioLanguage != null) {
                 customData.put("audioLanguage", audioLanguage);
