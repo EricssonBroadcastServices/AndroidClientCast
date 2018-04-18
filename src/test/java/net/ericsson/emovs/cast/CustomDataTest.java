@@ -75,7 +75,10 @@ public class CustomDataTest {
         assertEquals(true, propsJson.optBoolean("useLastViewedOffset"));
         assertEquals(1L, propsJson.optLong("absoluteStartTime"));
         assertEquals(10L, propsJson.optLong("maxBitrate"));
-        assertEquals(2, propsJson.optInt("startTime"));
+
+        JSONObject playbackProps = propsJson.getJSONObject("playbackProperties");
+        assertEquals(2, playbackProps.optInt("startTime"));
+
         assertTrue(propsJson.has("ericssonexposure"));
     }
 
