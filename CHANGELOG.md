@@ -1,9 +1,6 @@
 # Release Notes
 
-## 2.XX.0
-
-### New features and Enhancements
-**EMP-XXXX** Added stuff
+## 2.0.82
 
 ### Bug fixes
-**EMP-XXXX** Fixed stuff
+- playFrom property is now being sent inside the playbackProperties json object
