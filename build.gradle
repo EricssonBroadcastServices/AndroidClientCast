@@ -59,7 +59,7 @@ dependencies {
         compile "com.github.EricssonBroadcastServices:AndroidClientExposure:${project.ext.libraryTag}"
     }
     compile "com.android.support:mediarouter-v7:26.1.0"
-    compile "com.google.android.gms:play-services-cast-framework:15.0.1"
+    compile "com.google.android.gms:play-services-cast-framework:12.0.1"
 
     // Test Dependencies
     testCompile "org.mockito:mockito-core:2.+"
