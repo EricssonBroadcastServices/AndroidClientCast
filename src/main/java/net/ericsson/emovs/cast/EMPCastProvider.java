@@ -2,6 +2,7 @@ package net.ericsson.emovs.cast;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.cast.MediaMetadata;
@@ -32,6 +33,7 @@ import static com.google.android.gms.cast.MediaStatus.PLAYER_STATE_UNKNOWN;
  */
 
 public class EMPCastProvider {
+    private static final String TAG = EMPCastProvider.class.toString();
     private CastContext castContext;
     private EmpReceiverChannel empReceiverChannel;
     private EmptyEmpCastListener startCastingListener;
@@ -54,8 +56,15 @@ public class EMPCastProvider {
      *
      */
     public EMPCastProvider() {
-        this.castContext = CastContext.getSharedInstance(EMPRegistry.applicationContext());
-        this.empReceiverChannel = EmpReceiverChannel.getSharedInstance(this.castContext);
+        try {
+            this.castContext = CastContext.getSharedInstance(EMPRegistry.applicationContext());
+            this.empReceiverChannel = EmpReceiverChannel.getSharedInstance(this.castContext);
+        }
+        catch(Exception e) {
+            this.castContext = null;
+            this.empReceiverChannel = null;
+            Log.d(TAG, "Chromecast capabilities not found.");
+        }
     }
 
     /**
@@ -71,7 +80,10 @@ public class EMPCastProvider {
      * @return
      */
     public CastSession getCurrentCastSession() {
-        return this.castContext.getSessionManager().getCurrentCastSession();
+        if (this.castContext != null && this.castContext.getSessionManager() != null) {
+            return this.castContext.getSessionManager().getCurrentCastSession();
+        }
+        return null;
     }
 
     /**
