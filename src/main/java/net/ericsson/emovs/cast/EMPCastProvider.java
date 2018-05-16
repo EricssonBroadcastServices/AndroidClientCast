@@ -175,7 +175,7 @@ public class EMPCastProvider {
         this.playable = playable;
         MediaInfo media = buildMediaInfo(playable, customData);
 
-        remoteMediaClient.load(media, true, 0, customData.toJson());
+        remoteMediaClient.load(media, customData.autoplay, customData.startTime, customData.toJson());
     }
 
     /**
