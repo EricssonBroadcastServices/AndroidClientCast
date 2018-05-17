@@ -166,7 +166,6 @@
     <orderEntry type="library" exported="" name="com.google.android.gms:play-services-cast-framework-15.0.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="classworlds:classworlds:1.1-alpha-2@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:C.\Wk\Ericsson\AndroidClient2\libraries\cast\libs\support-annotations-26.1.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="org.apache.maven:maven-plugin-registry:2.2.1@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="org.apache.maven:maven-settings:2.2.1@jar" level="project" />
     <orderEntry type="module" module-name="utilities" exported="" />
