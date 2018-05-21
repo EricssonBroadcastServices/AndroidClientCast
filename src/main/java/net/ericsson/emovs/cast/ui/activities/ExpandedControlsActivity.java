@@ -40,30 +40,35 @@ public class ExpandedControlsActivity extends ExpandedControllerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        try {
+            super.onCreate(savedInstanceState);
 
-        if (this.empCastListener != null) {
-            EMPCastProvider.getInstance().getReceiverChannel().removeListener(this.empCastListener);
-        }
+            if (this.empCastListener != null) {
+                EMPCastProvider.getInstance().getReceiverChannel().removeListener(this.empCastListener);
+            }
 
-        this.empCastListener = new EmptyEmpCastListener() {
-            @Override
-            public void onTracksUpdated(List<MediaTrack> audioTracks, List<MediaTrack> subtitleTracks) {
-                if (audioTracks.size() > 1 || subtitleTracks.size() > 0) {
-                    bindTrackSelectionButton();
-                }
-                else {
-                    ImageView ccBtn = geTracksButton();
-                    if (ccBtn != null) {
-                        ccBtn.setEnabled(false);
-                        ccBtn.setClickable(false);
+            this.empCastListener = new EmptyEmpCastListener() {
+                @Override
+                public void onTracksUpdated(List<MediaTrack> audioTracks, List<MediaTrack> subtitleTracks) {
+                    if (audioTracks.size() > 1 || subtitleTracks.size() > 0) {
+                        bindTrackSelectionButton();
+                    }
+                    else {
+                        ImageView ccBtn = geTracksButton();
+                        if (ccBtn != null) {
+                            ccBtn.setEnabled(false);
+                            ccBtn.setClickable(false);
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        bindTrackSelectionButton();
-        EMPCastProvider.getInstance().getReceiverChannel().addListener(this.empCastListener);
+            bindTrackSelectionButton();
+            EMPCastProvider.getInstance().getReceiverChannel().addListener(this.empCastListener);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
