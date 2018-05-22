@@ -3,7 +3,7 @@
 ## 2.0.90-2
 
 ### Bug fixes
-- **EMP-11339** Updated ExpandedControllerActivity layout.
+- **EMP-11339** Updated ExpandedControllerActivity layout (outdated layout was causing a crash in reference ExpandedControllerActivity after play-services-cast-framework update).
 
 ## 2.0.89
 
