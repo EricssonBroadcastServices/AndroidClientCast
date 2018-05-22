@@ -1,5 +1,10 @@
 # Release Notes
 
+## 2.0.90-2
+
+### Bug fixes
+- **EMP-11339** Updated ExpandedControllerActivity layout.
+
 ## 2.0.89
 
 ### Bug fixes
