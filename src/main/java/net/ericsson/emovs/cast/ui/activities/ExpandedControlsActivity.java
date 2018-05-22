@@ -73,11 +73,12 @@ public class ExpandedControlsActivity extends ExpandedControllerActivity {
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
-        if (layoutResID == R.layout.cast_expanded_controller_activity) {
-            getDelegate().setContentView(R.layout.emp_cast_expanded_controller_activity);
-            return;
-        }
-        getDelegate().setContentView(layoutResID);
+        // NOTE: uncomment when you need a custom expanded layout
+        //if (layoutResID == R.layout.cast_expanded_controller_activity) {
+        //    getDelegate().setContentView(R.layout.emp_cast_expanded_controller_activity);
+        //    return;
+        //}
+        super.setContentView(layoutResID);
     }
 
     @Override

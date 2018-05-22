@@ -93,26 +93,43 @@
                         android:contentDescription="@string/cast_expanded_controller_ad_image_description"
                         android:src="@drawable/quantum_ic_bigtop_updates_white_24"
                         android:visibility="gone"
-                        android:layout_centerInParent="true"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/ad_in_progress_label"
-                        android:layout_alignRight="@id/ad_in_progress_label"
-                        android:layout_alignEnd="@id/ad_in_progress_label"
-                        android:layout_marginTop="8dp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:text="@string/cast_expanded_controller_skip_ad_label"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="@color/cast_expanded_controller_text_color"
-                        android:background="@drawable/cast_skip_ad_label_border"
-                        android:visibility="gone" />
+                        android:layout_centerInParent="true"
+                        android:clickable="false"/>
                 </RelativeLayout>
             </RelativeLayout>
-
+            <TextView
+                android:clickable="false"
+                android:id="@+id/ad_skip_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/cast_expanded_controller_skip_ad_text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/cast_expanded_controller_text_color"
+                android:visibility="gone" />
+            <TextView
+                android:clickable="false"
+                android:id="@+id/ad_skip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/cast_expanded_controller_skip_ad_label"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/cast_expanded_controller_text_color"
+                android:background="@drawable/cast_skip_ad_label_border"
+                android:visibility="gone" />
             <ProgressBar
                 android:id="@+id/loading_indicator"
                 style="?android:attr/progressBarStyleLarge"
@@ -277,8 +294,10 @@
                     android:layout_toEndOf="@+id/button_2"
                     android:padding="0dp"
                     tools:ignore="ContentDescription" />
+
             </RelativeLayout>
 
         </RelativeLayout>
     </RelativeLayout>
+
 </RelativeLayout>
